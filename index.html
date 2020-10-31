@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <div class="title-row">
+      <h2 class="title">JY Jigsaw Quiz!!</h2>
+      <div class="round">Round <span id="round-value"></span></div>
+    </div>
+    <div class="row">
+      <div class="grid-wrapper">
+        <div class="grid"></div>
+      </div>
+      <div class="score-board">
+        <div class="text">
+          <p>Gold = <span id="gold-value"></span></p>
+          <p>No. of Tries = <span id="tries-value"></span></p>
+        </div>
+        <div class="character-details">
+          <h2 id="character-name"></h2>
+          <h4 id="character-class"></h4>
+        </div>
+      </div>
+    </div>
+    <button onclick="reveal()">Reveal</button>
+    <button id="nextButton" onclick="nextRound()">Next</button>
+  </body>
+</html>
