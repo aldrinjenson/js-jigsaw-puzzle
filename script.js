@@ -7,29 +7,23 @@ const characterName = document.getElementById("character-name");
 const characterClass = document.getElementById("character-class");
 
 const width = 10;
-const bgPaths = [
-  "0.jpg",
-  "1.jpeg",
-  "2.jpg",
-  "3.jpg",
-  "4.jpg",
-  "5.jpg",
-  "6.jpg",
-];
+
 const people = {
-  0: { name: "St. Joseph", class: " Bethlehem" }, // trial
-  1: { name: "St. Dominic Savio", class: "Italy" },
-  2: { name: "Saint Therese of Lisieux", class: "France" },
-  3: { name: "St. Maria Goretti", class: "Italy" },
-  4: { name: "Blessed Carlo Acutis", class: "Italy" },
-  5: { name: "St. Kateri Tekakwitha", class: "North America" },
-  6: { name: "Saint Philomena", class: "Greece" },
+  0: { name: "St. Joseph", class: "Bethlehem", imgSrc: "0.jpg" }, // trial
+  1: { name: "St. Dominic Savio", class: "Italy", imgSrc: "1.jpeg" },
+  2: { name: "Saint Therese of Lisieux", class: "France", imgSrc: "2.jpg" },
+  3: { name: "St. Maria Goretti", class: "Italy", imgSrc: "3.jpg" },
+  4: { name: "Blessed Carlo Acutis", class: "Italy", imgSrc: "4.jpg" },
+  5: { name: "St. Kateri Tekakwitha", class: "North America", imgSrc: "5.jpg" },
+  6: { name: "Saint Philomena", class: "Greece", imgSrc: "6.jpg" },
+  7: { name: "Saint Agnes", class: "Rome", imgSrc: "7.jpg" },
+  8: { name: "St. Joan of Arc", class: "Rome", imgSrc: "8.jpg" },
 };
 let goldValue = 100;
 let triesValue = 0;
 let index = 0;
 
-gridWrapper.style.backgroundImage = `url(images/${bgPaths[index]})`;
+gridWrapper.style.backgroundImage = `url(images/${people[index].imgSrc})`;
 gameRoundValue.innerText = index;
 gold.innerText = goldValue;
 tries.innerText = triesValue;
@@ -37,6 +31,7 @@ tries.innerText = triesValue;
 const handleClick = (e) => {
   if (e.target.style.backgroundColor !== "transparent") {
     e.target.style.backgroundColor = "transparent";
+    e.target.innerText = "";
     goldValue -= 2;
     triesValue += 1;
     gold.innerText = goldValue;
@@ -69,14 +64,14 @@ const nextRound = () => {
   characterName.innerText = "";
   characterClass.innerText = "";
   index += 1;
-  gridWrapper.style.backgroundImage = `url(images/${bgPaths[index]})`;
+  gridWrapper.style.backgroundImage = `url(images/${people[index].imgSrc})`;
   gameRoundValue.innerText = index;
-  // createBoard();
-  if (index + 1 === bgPaths.length) {
+  createBoard();
+  if (!people[index + 1]) {
     const nextButton = document.getElementById("nextButton");
     nextButton.disabled = true;
     nextButton.innerText = "Last round";
   }
 };
 
-// createBoard();
+createBoard();
