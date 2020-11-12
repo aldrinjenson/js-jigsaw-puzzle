@@ -7,14 +7,23 @@ const characterName = document.getElementById("character-name");
 const characterClass = document.getElementById("character-class");
 
 const width = 10;
-const bgPaths = ["0.jpeg", "1.png", "2.jpg", "3.jpeg", "4.jpeg", "5.jpeg"];
+const bgPaths = [
+  "0.jpg",
+  "1.jpeg",
+  "2.jpg",
+  "3.jpg",
+  "4.jpg",
+  "5.jpg",
+  "6.jpg",
+];
 const people = {
-  0: { name: "Aldrin Jenson", class: "CS3B" }, // trial
-  1: { name: "Jisna Jose", class: "CS7A" },
-  2: { name: "Shimil Abraham", class: "CS3A" },
-  3: { name: "Alan Chettan", class: "LKG-B" },
-  4: { name: "Jency Chechy", class: "EB5" },
-  5: { name: "Neema John", class: "ECE" },
+  0: { name: "St. Joseph", class: " Bethlehem" }, // trial
+  1: { name: "St. Dominic Savio", class: "Italy" },
+  2: { name: "Saint Therese of Lisieux", class: "France" },
+  3: { name: "St. Maria Goretti", class: "Italy" },
+  4: { name: "Blessed Carlo Acutis", class: "Italy" },
+  5: { name: "St. Kateri Tekakwitha", class: "North America" },
+  6: { name: "Saint Philomena", class: "Greece" },
 };
 let goldValue = 100;
 let triesValue = 0;
@@ -26,11 +35,13 @@ gold.innerText = goldValue;
 tries.innerText = triesValue;
 
 const handleClick = (e) => {
-  e.target.style.backgroundColor = "transparent";
-  goldValue -= 2;
-  triesValue += 1;
-  gold.innerText = goldValue;
-  tries.innerText = triesValue;
+  if (e.target.style.backgroundColor !== "transparent") {
+    e.target.style.backgroundColor = "transparent";
+    goldValue -= 2;
+    triesValue += 1;
+    gold.innerText = goldValue;
+    tries.innerText = triesValue;
+  }
 };
 
 const createBoard = () => {
@@ -60,7 +71,7 @@ const nextRound = () => {
   index += 1;
   gridWrapper.style.backgroundImage = `url(images/${bgPaths[index]})`;
   gameRoundValue.innerText = index;
-  createBoard();
+  // createBoard();
   if (index + 1 === bgPaths.length) {
     const nextButton = document.getElementById("nextButton");
     nextButton.disabled = true;
@@ -68,4 +79,4 @@ const nextRound = () => {
   }
 };
 
-createBoard();
+// createBoard();
