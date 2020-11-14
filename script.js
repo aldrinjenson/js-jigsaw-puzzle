@@ -11,13 +11,13 @@ const width = 10;
 const people = {
   0: { name: "St. Joseph", class: "Bethlehem", imgSrc: "0.jpg" }, // trial
   1: { name: "St. Dominic Savio", class: "Italy", imgSrc: "1.jpeg" },
-  2: { name: "Saint Therese of Lisieux", class: "France", imgSrc: "2.jpg" },
-  3: { name: "St. Maria Goretti", class: "Italy", imgSrc: "3.jpg" },
-  4: { name: "Blessed Carlo Acutis", class: "Italy", imgSrc: "4.jpg" },
-  5: { name: "St. Kateri Tekakwitha", class: "North America", imgSrc: "5.jpg" },
-  6: { name: "Saint Philomena", class: "Greece", imgSrc: "6.jpg" },
-  7: { name: "Saint Agnes", class: "Rome", imgSrc: "7.jpg" },
-  8: { name: "St. Joan of Arc", class: "Rome", imgSrc: "8.jpg" },
+  2: { name: "Blessed Carlo Acutis", class: "Italy", imgSrc: "4.jpg" },
+  3: { name: "Saint Therese of Lisieux", class: "France", imgSrc: "2.jpg" },
+  4: { name: "St. Maria Goretti", class: "Italy", imgSrc: "3.jpg" },
+  5: { name: "Saint Agnes", class: "Rome", imgSrc: "7.jpg" },
+  6: { name: "St. Joan of Arc", class: "Rome", imgSrc: "8.jpg" },
+  7: { name: "Saint Philomena", class: "Greece", imgSrc: "6.jpg" },
+  8: { name: "St. Kateri Tekakwitha", class: "North America", imgSrc: "5.jpg" },
 };
 let goldValue = 100;
 let triesValue = 0;
