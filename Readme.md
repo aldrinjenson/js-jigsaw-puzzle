@@ -1,6 +1,13 @@
 # JS Jigsaw Puzzle
 
-Made for Jesus Youth Gathering to be held on 14-11-2020 Saturday 4 PM.
+Simple Jigsaw puzzle game built with vanilla Javascript
+
+### Instructions
+
+- Fork and/or clone this repo
+- Place the images of your choice in the images folder
+- Open People.js file and update name, alt Text and image name
+- Format for updating given inside people.js file
 
 ### Screenshots
 
