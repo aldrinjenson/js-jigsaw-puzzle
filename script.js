@@ -48,7 +48,7 @@ const nextRound = () => {
   grid.innerHTML = "";
   goldValue = 100;
   triesValue = 0;
-  gold.innerTeany source imagext = goldValue;
+  gold.innerText = goldValue;
   tries.innerText = triesValue;
   characterName.innerText = "";
   altText.innerText = "";
