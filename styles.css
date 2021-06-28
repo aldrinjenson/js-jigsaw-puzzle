@@ -1,8 +1,13 @@
-body{
+:root {
+  --desktopLength: 35vw;
+  --mobileLength: 85vw;
+}
+
+body {
   background-color: rgb(247, 237, 226);
 }
 
-.title-row{
+.title-row {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,24 +15,23 @@ body{
 }
 
 .grid-wrapper {
-  height: 500px;
-  width: 500px;
+  height: var(--desktopLength);
+  width: var(--desktopLength);
   background-position: center;
   background-size: cover;
 }
-
 .grid {
   height: 100%;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   background-size: cover;
-  border: 3px solid;
+  outline: 3px solid;
 }
-
 .grid div {
-  height: 49px;
-  width: 49px;
+  box-sizing: border-box;
+  width: calc(var(--desktopLength) / 10);
+  height: calc(var(--desktopLength) / 10);
   border-right: 1px solid black;
   border-bottom: 1px solid black;
   margin: 0;
@@ -40,12 +44,24 @@ body{
   cursor: pointer;
 }
 
-.row{  
+@media only screen and (max-width: 500px) {
+  .grid-wrapper {
+    height: var(--mobileLength);
+    width: var(--mobileLength);
+  }
+  .grid div {
+    width: calc(var(--mobileLength) / 10);
+    height: calc(var(--mobileLength) / 10);
+  }
+}
+
+.row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-.score-board{
+.score-board {
   display: flex;
   flex-direction: column;
   width: 350px;
@@ -53,14 +69,21 @@ body{
   align-items: center;
 }
 
-.score-board{
-  margin-left: 30px;
-}
-
-.text{
+.text {
   font-size: larger;
 }
-.character-details{
+.character-details {
   margin-left: 10px;
   text-align: center;
+}
+
+/* to prevent selection of text */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }

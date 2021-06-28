@@ -16,7 +16,7 @@
     </div>
     <div class="row">
       <div class="grid-wrapper">
-        <div class="grid"></div>
+        <div class="grid noselect"></div>
       </div>
       <div class="score-board">
         <div class="text">
@@ -27,9 +27,11 @@
           <h2 id="character-name"></h2>
           <h4 id="alt-text"></h4>
         </div>
+        <div class="button-wrapper">
+          <button id="revealButton" onclick="reveal()">Reveal</button>
+          <button id="nextButton" onclick="nextRound()">Next</button>
+        </div>
       </div>
     </div>
-    <button onclick="reveal()">Reveal</button>
-    <button id="nextButton" onclick="nextRound()">Next</button>
   </body>
 </html>
